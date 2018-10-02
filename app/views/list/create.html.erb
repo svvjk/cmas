@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Status of Article(s)</title>
+<style>
+body{
+      background-image: url("/images/viewlist.jpg");
+    background-size: 100% 350%;
+    background-color: grey;
+    background-repeat: no-repeat;
+
+}
+	.content {
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    max-width: 500px;
+    margin: auto;
+    color: violet;
+    background-color: grey;
+}
+}
+
+</style>
+</head>
+<body>
+<div class="content">
+
+<h2><u>Article Status</u></h2>
+<p>
+  <strong>Article No :</strong>
+  <%= @article.Articleno %>
+</p>
+ 
+
+<p>
+  <strong>Status :</strong>
+  <%= @article.Status %>
+</p>
+
+</div>
+</body>
+</html>

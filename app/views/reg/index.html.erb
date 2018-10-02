@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CMAS</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+
+	<style>
+		.container{
+			text-align: center;
+			color: red;
+		}
+		.container-fluid{
+			background-color: yellow;
+			color: black;
+			text-align: center;
+
+		}
+		.jumbotron{
+			text-shadow: 4px 4px #000000;
+			color: green;
+		}
+
+body {
+		margin-top: 100px;
+   background-color: grey;
+  background-image: url(/images/papersflying2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: center;
+}
+	</style>
+</head>
+<body>
+	<div class="jumbotron text-center">
+  <h1>College Magazine Article Submission</h1>
+</div>
+
+	<%= form_with url: "/login",  local: true do |form| %>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-4">
+			<p><%= link_to 'Register' ,controller: "reg",action:"new" %></p>
+		</div>
+		<div class="col-sm-4">
+			<p><%= link_to 'View List of Reviewed Article',controller: "list",action:"index"%></p>
+		</div>
+		<div class="col-sm-4">
+			<p><%= link_to 'Editor_Login' ,controller: "editor",action:"index" %></p>
+		</div>
+	</div>
+</div>
+<br/><br/>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+		</div>
+		<div class="col-sm-4">
+			<table>
+			<tr><td colspan="2"><h2>&emsp;&emsp;Student&nbsp;Login</h2></td></tr><br/>
+		<tr>
+		<td>&emsp;&emsp;RegID:</td>
+		<td>&emsp;&emsp;<%= form.text_field :RegID %></td>
+		</tr>
+
+		<tr>
+		<td>&emsp;&emsp;Password:</td>
+		<td>&emsp;&emsp;<%= form.password_field :password %></td>
+		</tr>
+  
+		<tr>
+		<td></td><td>&emsp;&emsp;<%= form.submit :login %></td>
+		</tr>
+	</table>
+	</div>
+		<div class="col-sm-4">
+		</div>
+	</div>
+ </div>
+<% end %>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CMAS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+ 
+  <style>
+  .container{
+    margin-top: 200px;
+    color: red;
+    opacity: 2.0;
+  }
+
+  #error_explanation,table{
+    background-color: white;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+  }
+
+      body{
+        margin-top: 100px;
+        margin: auto;
+        background-image: url("/images/7.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: grey;
+    }
+
+  </style>
+
+</head>
+<body>
+<%= form_with scope: :rg,url: "/reg",  local: true do |form| %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <% if @reg.errors.any? %>
+        <div id="error_explanation">
+        <h3>
+          <%= pluralize(@reg.errors.count, "error") %> prohibited
+          that student from being saved:
+        </h3>
+        <ul>
+          <% @reg.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    
+       <% end %>
+      </div>
+  </div>
+      <div class="col-sm-4">
+      
+      </div>
+    <div class="col-sm-4">
+  <table>
+    <tr>
+      <td colspan="2" align="center"><h2>New Student Registration</h2></td>
+    </tr>
+  <tr>
+    <td>Name :</td>
+    <td><%= form.text_field :name %></td>
+  </tr>
+ 
+  <tr>
+    <td>Contact No :</td>
+    <td><%= form.text_field :contactno %></td>
+  </tr>
+
+ <tr>
+    <td>Email Id :</td>
+    <td><%= form.text_field :Emailid %></td>
+  </tr>
+
+  <tr>
+    <td>Current Semester :</td>
+    <td><%= form.text_field :currentsemester %></td>
+  </tr>
+
+  <tr>
+    <td>Reg Id :</td>
+    <td><%= form.text_field :Regid %></td>
+  </tr>
+    <tr>
+    <td>Password :</td>
+    <td><%= form.password_field :password %></td>
+  </tr>
+
+  <tr>
+    <td></td><td><%= form.submit :register %></td>
+  </tr>
+</table>
+<% end %>
+  </div>
+</div>
+</div>
+</body>
+</html>

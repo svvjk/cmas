@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Display Submissions</title>
+	<style>
+	body{
+		background-color: grey;
+		background-image: url("/images/6.png");
+		background-attachment: center;
+		background-size: 100% 80%;
+		margin-left: 13%;
+		margin-right: 13%;
+		
+	}
+		.content{
+			text-align: center;
+			border: 1px solid;
+			background-color: yellow;
+			background-attachment: center;
+		}
+
+	</style>
+</head>
+<body>
+<div class="content">
+	<h2>Submitted idea(s) for college magazine so far:</h2>
+
+<p>
+  <strong>Articleno:</strong>
+  <%= @article.Articleno %>
+</p>
+ 
+<p>
+  <strong>Article:</strong>
+  <%= @article.article %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @article.Status %>
+</p>
+</div>
+
+</body>
+</html>
+
+
+
+
+

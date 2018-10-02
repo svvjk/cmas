@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>Student Portal-View Status</title>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<style>
+  .container{
+    margin-top: 300px;
+    text-align: center;
+  }
+		.content {
+    max-width: 500px;
+    margin: auto;
+    color: blue;
+    text-align: center;
+
+}
+body{
+    background-image: url("/images/6.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 170%;
+    background-color: grey;
+
+}
+</style>
+</head>
+<body>
+  <div class="container">
+  <div class="row">
+
+<div class="col-sm-4">
+  <h3><%= link_to 'Logout' ,controller:"logout" , action:"index" %></h3> <br/>
+</div>
+    
+    <div class="col-sm-4">
+	<h3><%= link_to 'Submit Abstract' , action:"new" %></h3> <br/>
+</div>
+
+<div class="col-sm-4">
+  <div class="content">
+<table>
+<%= form_with scope: :list ,url: "/list" , local: true do |form| %>
+
+  <tr>
+    <td><h3>Article No :</h3></td>
+    <td><%= form.text_field :Articleno %></td>
+  </tr>
+   <tr>
+    <td></td><td><%= form.submit :viewstatus %></td>
+  </tr>
+ <% end %>
+</table>
+ </div> 
+</div>
+</div>
+</div>
+</body>
+</html>

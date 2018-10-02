@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+  <title>Updating Status</title>
+  <style>
+  #id1{
+    color: red;
+  }
+ 
+  table{
+      text-align: center;
+      margin-top: 300px;
+      border: 1px solid violet;
+      background-color: yellow;
+      padding: 10px;
+    }
+
+body{
+  background-color: grey;
+  background-image: url("/images/9.jpg");
+  background-size: 100% 150%;
+  background-repeat: no-repeat;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-4">
+  <table>
+    <tr>
+      <td colspan="2"><h1>Update Status</h1></td>
+    </tr>
+    <tr>
+  <%= form_with scope: :updt ,url: "/editor" ,local: true do |form| %>
+ 
+ 
+    <td>Articleno : </td>
+    <td><%= form.text_field :Articleno %></td>
+  </tr>
+ 
+  <tr>
+    <td>Status : </td>
+    <td><%= form.text_field :Status %></td>
+  </tr>
+
+  <tr>
+    <td></td><td><%= form.submit %><% end %></td>
+  </tr>
+
+
+ <tr>
+  <td></td><td><p id="id1"><%= link_to 'Back', action:"index" %></p></td>
+</tr>
+</table>
+</div>
+<div class="col-sm-4">
+</div>
+</div>
+</div>
+</body>
+</html>

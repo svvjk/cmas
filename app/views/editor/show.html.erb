@@ -1,0 +1,33 @@
+
+<html>
+<head>
+  <title>Article List</title>
+  <style>
+    .content{
+      margin-top: 170px;
+      text-align: center;
+      color: green;
+      border: 1px solid black;
+    }
+
+  </style>
+ </head>
+ <body>
+ <div class="content">
+ <h1>Listing articles with status </h1>
+ 
+  
+    <p>
+    Articleno:&emsp;&emsp;&emsp;&emsp;&emsp;Status
+    </p>
+ 
+  <% @articles.each do |article| %>
+    <p>
+      <%= @article.Articleno %>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<%= @article.Status %>
+    </p>
+    
+  <% end %>
+  	 
+</div>
+</body>
+</html>

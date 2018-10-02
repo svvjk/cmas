@@ -1,0 +1,10 @@
+def create
+  /render plain: params[:lg].inspect/
+   @user = Reg.find_by(params[:id])
+   if @user and @user.password(params[:password])
+	/login[:RegID]=user.id /
+	redirect_to "http://www.rubyonrails.org"
+   else
+    redirect_to "http://www.google.com"
+	end
+  end

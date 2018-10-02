@@ -1,0 +1,55 @@
+ <html>
+ <head><title>Editor Panel</title>
+ </head>
+ <style>
+   .content{
+      margin-top: 170px;
+      text-align: center;
+      color: green;
+      border: 2px solid #000000;
+   }
+
+  body {
+   background-color: grey;
+  background-image: url(/images/admin.png);
+  background-repeat: no-repeat;
+  background-size: 100% 70%;
+  background-attachment: center;
+}
+
+ </style>
+ <body>
+  <div class="content">
+  <h1> Welcome Editor </h1><br/>
+ <h1>Listing Articles</h1>
+
+  <%= form_with  local: true do |form| %>
+ 
+<table>
+  <tr>
+    <th>Articleno</th>
+    <th>abstract</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.Articleno %></td>
+      <td><%= article.abstract %></td>
+	 
+	<td><%= link_to 'Show', article_path(article) %></td>
+ <td> <%= f.radio_button :contactmethod, 'Approved', :checked => true %> Approved</td>
+   <td> <%= f.radio_button :contactmethod, 'Notapproved' %> Notapproved  </td>
+  
+	
+      
+    </tr>
+  <% end %>
+  	 
+</table>
+</div>
+
+</body>
+<%= form.submit %>
+<p><%= link_to 'updatestatus',action:"new" %></p>
+</html>

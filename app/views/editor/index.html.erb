@@ -1,0 +1,52 @@
+ <html>
+ <head><title>Editor Panel</title>
+ </head>
+ <style>
+   .content{
+      margin-top: 170px;
+      text-align: center;
+      color: green;
+      border: 2px solid #000000;
+   }
+
+  body {
+   background-color: grey;
+  background-image: url(/images/admin.png);
+  background-repeat: no-repeat;
+  background-size: 100% 160%;
+  background-attachment: center;
+}
+
+table{
+  margin-left: 42%;
+  border: 2px solid black;
+}
+
+ </style>
+ <body>
+  <div class="content">
+  <h3> Welcome Editor </h3><br/>
+ <h3>Listing Articles</h3>
+ 
+<table>
+  <tr>
+    <td>Articleno</td>
+    <td>abstract</td>
+    <td>Action</td>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+  <tr>
+      <td><%= article.Articleno %></td>
+      <td><%= article.abstract %></td>
+	   <td><%= link_to 'Show', article_path(article) %></td> 
+  </tr>
+  <% end %>
+  	 
+  <tr>
+    <td></td><td><%= link_to 'updatestatus',action:"new" %></td><td></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
